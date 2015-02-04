@@ -17,6 +17,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    shitajiki = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 270, 300)];
+    
+    shitajiki.backgroundColor = [UIColor orangeColor];
+    shitajiki.alpha = 1.0;
 }
 
 - (void)didReceiveMemoryWarning {
