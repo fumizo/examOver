@@ -14,6 +14,9 @@
 		4F1A8A441A8267CC004FF2C3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F1A8A431A8267CC004FF2C3 /* Images.xcassets */; };
 		4F1A8A471A8267CC004FF2C3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F1A8A451A8267CC004FF2C3 /* LaunchScreen.xib */; };
 		4F1A8A531A8267CC004FF2C3 /* examOverTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A8A521A8267CC004FF2C3 /* examOverTests.m */; };
+		4FC7DF481A84FCEF0004A541 /* shitajiki.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FC7DF471A84FCEF0004A541 /* shitajiki.png */; };
+		4FC7DF4C1A84FD7D0004A541 /* ChangeRGB.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC7DF4B1A84FD7D0004A541 /* ChangeRGB.m */; };
+		4FC7DF4E1A84FE9F0004A541 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FC7DF4D1A84FE9F0004A541 /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,10 @@
 		4F1A8A4C1A8267CC004FF2C3 /* examOverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = examOverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F1A8A511A8267CC004FF2C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F1A8A521A8267CC004FF2C3 /* examOverTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = examOverTests.m; sourceTree = "<group>"; };
+		4FC7DF471A84FCEF0004A541 /* shitajiki.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shitajiki.png; sourceTree = "<group>"; };
+		4FC7DF4A1A84FD7D0004A541 /* ChangeRGB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeRGB.h; sourceTree = "<group>"; };
+		4FC7DF4B1A84FD7D0004A541 /* ChangeRGB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeRGB.m; sourceTree = "<group>"; };
+		4FC7DF4D1A84FE9F0004A541 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FC7DF4E1A84FE9F0004A541 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +71,9 @@
 		4F1A8A2A1A8267CC004FF2C3 = {
 			isa = PBXGroup;
 			children = (
+				4FC7DF4D1A84FE9F0004A541 /* UIKit.framework */,
+				4FC7DF491A84FD7D0004A541 /* ChangeRGB2 */,
+				4FC7DF471A84FCEF0004A541 /* shitajiki.png */,
 				4F1A8A351A8267CC004FF2C3 /* examOver */,
 				4F1A8A4F1A8267CC004FF2C3 /* examOverTests */,
 				4F1A8A341A8267CC004FF2C3 /* Products */,
@@ -117,6 +128,15 @@
 				4F1A8A511A8267CC004FF2C3 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4FC7DF491A84FD7D0004A541 /* ChangeRGB2 */ = {
+			isa = PBXGroup;
+			children = (
+				4FC7DF4A1A84FD7D0004A541 /* ChangeRGB.h */,
+				4FC7DF4B1A84FD7D0004A541 /* ChangeRGB.m */,
+			);
+			path = ChangeRGB2;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +219,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FC7DF481A84FCEF0004A541 /* shitajiki.png in Resources */,
 				4F1A8A421A8267CC004FF2C3 /* Main.storyboard in Resources */,
 				4F1A8A471A8267CC004FF2C3 /* LaunchScreen.xib in Resources */,
 				4F1A8A441A8267CC004FF2C3 /* Images.xcassets in Resources */,
@@ -222,6 +243,7 @@
 				4F1A8A3F1A8267CC004FF2C3 /* ViewController.m in Sources */,
 				4F1A8A3C1A8267CC004FF2C3 /* AppDelegate.m in Sources */,
 				4F1A8A391A8267CC004FF2C3 /* main.m in Sources */,
+				4FC7DF4C1A84FD7D0004A541 /* ChangeRGB.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +434,7 @@
 				4F1A8A581A8267CC004FF2C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4F1A8A591A8267CC004FF2C3 /* Build configuration list for PBXNativeTarget "examOverTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +443,7 @@
 				4F1A8A5B1A8267CC004FF2C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

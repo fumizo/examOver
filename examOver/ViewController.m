@@ -19,9 +19,10 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     shitajiki = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 270, 300)];
+//    shitajiki.image = [UIImage imageNamed:@"shitajiki.png"];
     
-    shitajiki.backgroundColor = [UIColor orangeColor];
-    shitajiki.alpha = 0.8;
+    shitajiki.backgroundColor = [ChangeRGB changeRGB:@"#ff0000" alpha:0.88];
+    shitajiki.alpha = 0.9;
     [self.view addSubview:shitajiki];
     
     //    ドラッグジェスチャーをブラックビュー登録する
