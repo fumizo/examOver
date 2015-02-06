@@ -21,12 +21,14 @@
     shitajiki = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 270, 300)];
     
     shitajiki.backgroundColor = [UIColor orangeColor];
-    shitajiki.alpha = 0.5;
+    shitajiki.alpha = 0.8;
     [self.view addSubview:shitajiki];
     
     //    ドラッグジェスチャーをブラックビュー登録する
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panAction:)];
     [shitajiki addGestureRecognizer:pan];
+    
+    [note setContentMode:UIViewContentModeScaleAspectFit]; //画像が伸びないようにする
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,6 +51,24 @@
     //    移動した距離を初期かする
     [sender setTranslation:CGPointZero inView:self.view];
     
+}
+
+-(IBAction)cameraRoll{
+    //UIImagePickerControllerを初期化・生成
+    UIImagePickerController *ipc = [[UIImagePickerController alloc]init];
+    //画像の取得先をカメラロールに設定する
+    [ipc setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+    //デリゲートの設定
+    [ipc setDelegate:self];
+    [ipc setAllowsEditing:YES];
+    //カメラロールをモーダルビューとして表示する
+    [self presentViewController:ipc animated:YES completion:nil];
+}
+
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+    UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
+    [note setImage:image];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 

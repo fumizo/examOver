@@ -8,11 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController<UIGestureRecognizerDelegate>{
+@interface ViewController : UIViewController<UIGestureRecognizerDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>{
     UIView * shitajiki;
+    
+    IBOutlet UIImageView * note;
 }
 
 -(void)panAction:(UIPanGestureRecognizer *)sender;
+
+-(IBAction)cameraRoll;
 
 
 @end
