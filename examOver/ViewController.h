@@ -9,13 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "ChangeRGB.h"
 
-@interface ViewController : UIViewController<UIGestureRecognizerDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>{
+@interface ViewController : UIViewController<UINavigationControllerDelegate, UIImagePickerControllerDelegate,UIGestureRecognizerDelegate>{
     UIView * shitajiki;
     
     IBOutlet UIImageView * note;
+    
+    CGAffineTransform currentTransForm;
 }
 
 -(void)panAction:(UIPanGestureRecognizer *)sender;
+-(void)pinchAction:(UIPinchGestureRecognizer *)sender;
 
 -(IBAction)cameraRoll;
 
