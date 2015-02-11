@@ -21,13 +21,16 @@
     shitajiki = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 270, 300)];
 //    shitajiki.image = [UIImage imageNamed:@"shitajiki.png"];
     
-    shitajiki.backgroundColor = [ChangeRGB changeRGB:@"#ff0000" alpha:0.91];
+    shitajiki.backgroundColor = [ChangeRGB changeRGB:@"#ff0000" alpha:0.94];
     shitajiki.alpha = 0.9;
     [self.view addSubview:shitajiki];
     
-    //    ドラッグジェスチャーをブラックビュー登録する
+    //    ドラッグジェスチャーを登録する
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panAction:)];
     [shitajiki addGestureRecognizer:pan];
+    UIPanGestureRecognizer *pan2 = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panActionForNote:)];
+    [self.view addGestureRecognizer:pan2];
+    
     
     [note setContentMode:UIViewContentModeScaleAspectFit]; //画像が伸びないようにする
     
@@ -54,14 +57,26 @@
     //    移動した距離のx,yをブラックビューの中心点に指定
     CGPoint movedPoint = CGPointMake(shitajiki.center.x+p.x, shitajiki.center.y + p.y);
     shitajiki.center =movedPoint;
-
     
-    NSLog(@"*座標%@を移動中...*", NSStringFromCGPoint(movedPoint));
+//    NSLog(@"*座標%@を移動中...*", NSStringFromCGPoint(movedPoint));
     //    pは構造体！文字列としてnslogする１
     
     //    移動した距離を初期かする
     [sender setTranslation:CGPointZero inView:self.view];
 }
+-(void)panActionForNote:(UIPanGestureRecognizer *)sender{
+    
+    //    移動した距離の所得
+    CGPoint p =[sender translationInView:self.view];
+    //    移動した距離のx,yをブラックビューの中心点に指定
+    CGPoint movedPoint = CGPointMake(note.center.x+p.x, note.center.y + p.y);
+    note.center =movedPoint;
+    
+//    NSLog(@"*座標%@を移動中...*", NSStringFromCGPoint(movedPoint));
+    //    移動した距離を初期かする
+    [sender setTranslation:CGPointZero inView:self.view];
+}
+
 
 // ピンチジェスチャー発生時に呼び出されように設定したメソッド。
 // ピンチジェスチャー中に何度も呼び出される。
